@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - master
+    tags:
+      - 'v*'
   pull_request:
     branches:
       - master
+    tags:
+      - 'v*'
 
 env:
   TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
@@ -74,28 +78,40 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: a-lenda-de-silverhollow
-      #          path: .
 
       - name: List downloaded files
-        run: |
-          ls -la
-          sudo apt install -y unzip
+        run: ls -la
 
       - name: Create Release
         id: create_release
-        run: |
-          tag_name="v1.0-${{ github.sha }}"
-          response=$(curl -s -H "Authorization: token $TOKEN_GITHUB" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -d "{\"tag_name\":\"$tag_name\", \"name\":\"Release $tag_name\", \"body\":\"Novo build disponível!\"}" \
-            https://api.github.com/repos/${{ github.repository }}/releases)
-          
-          echo "Release criada: $response"
-          echo "::set-output name=id::$(echo $response | jq -r .id)" 
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: $TOKEN_GITHUB
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
 
-      - name: Upload JAR to Release
-        run: |
-          curl -X POST -H "Authorization: token $TOKEN_GITHUB" \
-            -H "Content-Type: application/java-archive" \
-            --data-binary @a-lenda-de-silverhollow.jar \
-            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}/assets?name=a-lenda-de-silverhollow.jar"
+#      - name: Create Release
+#        id: create_release
+#        run: |
+#          tag_name="v1.0-${{ github.sha }}"
+#          response=$(curl -s -H "Authorization: token $TOKEN_GITHUB" \
+#            -H "Accept: application/vnd.github.v3+json" \
+#            -d "{\"tag_name\":\"$tag_name\", \"name\":\"Release $tag_name\", \"body\":\"Novo build disponível!\"}" \
+#            https://api.github.com/repos/${{ github.repository }}/releases)
+#
+#          echo "Release criada: $response"
+#          echo "::set-output name=id::$(echo $response | jq -r .id)"
+#
+#      - name: Upload JAR to Release
+#        run: |
+#          curl -X POST -H "Authorization: token $TOKEN_GITHUB" \
+#            -H "Content-Type: application/java-archive" \
+#            --data-binary @a-lenda-de-silverhollow.jar \
+#            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}/assets?name=a-lenda-de-silverhollow.jar"
