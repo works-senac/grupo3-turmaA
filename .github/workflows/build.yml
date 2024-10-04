@@ -2,8 +2,6 @@ name: Build Java Project
 
 on:
   push:
-    branches:
-      - master
     tags:
       - 'v*'
   pull_request:
