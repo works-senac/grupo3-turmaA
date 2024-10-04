@@ -1,3 +1,5 @@
+package jogo.grupo3.turmaA;
+
 import java.util.Scanner;
 
 public class Menu {
