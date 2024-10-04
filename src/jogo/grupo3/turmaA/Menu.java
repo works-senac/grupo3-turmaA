@@ -1,5 +1,6 @@
 package jogo.grupo3.turmaA;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -10,39 +11,44 @@ public class Menu {
 
         while (continuar) {
             limparTela(100);
-
-            System.out.println("=== Menu Principal ===");
-            System.out.println("1. Iniciar Jogo");
-            System.out.println("2. Carregar Jogo");
-            System.out.println("3. Configurações");
-            System.out.println("4. Créditos");
-            System.out.println("0. Sair");
-            System.out.print("Escolha uma opção: ");
-
-            int option = scanner.nextInt();
-
+            // https://patorjk.com/software/taag/#p=display&f=Small%20Slant&t=A%20Lenda%20de%20Silverhollow
+            System.out.println("""
+                    ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗
+                    ║                                                                                                 ║
+                    ║     ___       __            __          __       _____ __             __        ____            ║
+                    ║    / _ |     / /__ ___  ___/ /__ _  ___/ /__    / __(_) /  _____ ____/ /  ___  / / /__ _    __  ║
+                    ║   / __ |    / / -_) _ \\/ _  / _ `/ / _  / -_)  _\\ \\/ / / |/ / -_) __/ _ \\/ _ \\/ / / _ \\ |/|/ /  ║
+                    ║  /_/ |_|   /_/\\__/_//_/\\_,_/\\_,_/  \\_,_/\\__/  /___/_/_/|___/\\__/_/ /_//_/\\___/_/_/\\___/__,__/   ║
+                    ║                                                                                                 ║
+                    ║                                                                                                 ║
+                    ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝
+                    """);
+            // https://ozh.github.io/ascii-tables/
+            System.out.print("""
+                    ╔══════════════════╗
+                    ║  Menu Principal  ║
+                    ╠══════════════════╣
+                    ║ 1. Iniciar Jogo  ║
+                    ║ 2. Carregar Jogo ║
+                    ║ 3. Configurações ║
+                    ║ 4. Créditos      ║
+                    ║ 5. História      ║
+                    ║ 0. Sair          ║
+                    ╚══════════════════╝
+                    """);
+            int option = verifyIntEntry("Sua escolha: ");
             switch (option) {
-                case 1:
-                    iniciarJogo();
-                    break;
-                case 2:
-                    carregarJogo();
-                    break;
-                case 3:
-                    configurations();
-                    break;
-                case 4:
-                    credits();
-                    break;
-                case 0:
+                case 1 -> iniciarJogo();
+                case 2 -> carregarJogo();
+                case 3 -> configurations();
+                case 4 -> credits();
+                case 0 -> {
                     System.out.println("Saindo do jogo...");
                     continuar = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida, tente novamente.");
+                }
+                default -> System.out.println("Opção inválida, tente novamente.");
             }
         }
-
         scanner.close();
     }
 
@@ -73,33 +79,31 @@ public class Menu {
         boolean voltar = false;
         while (!voltar) {
             limparTela(100);
-            System.out.println("*************************************************");
-            System.out.println("*              Senac SP - Santo Amaro           *");
-            System.out.println("*   Curso Analise e Desenvolvimento de Sistemas *");
-            System.out.println("*                                               *");
-            System.out.println("*  1º Semestre - Projeto Integrador - Turma A   *");
-            System.out.println("*                    Grupo 3                    *");
-            System.out.println("*                                               *");
-            System.out.println("*                 Integrantes:                  *");
-            System.out.println("*  - Gilvan Matos                               *");
-            System.out.println("*  - Gustavo Rego                               *");
-            System.out.println("*  - Kaynan Castro                              *");
-            System.out.println("*  - Raul Soares                                *");
-            System.out.println("*************************************************");
+            System.out.print("""
+                    ╔════════════════════════════════════════════════╗
+                    ║              Senac SP - Santo Amaro            ║
+                    ╠════════════════════════════════════════════════╣
+                    ║   Curso Analise e Desenvolvimento de Sistemas  ║
+                    ║   1º Semestre - Projeto Integrador - Turma A   ║
+                    ║                   Grupo 3                      ║
+                    ║                                                ║
+                    ║                 Integrantes:                   ║
+                    ║ - Gilvan Matos                                 ║
+                    ║ - Gustavo Rego                                 ║
+                    ║ - Kaynan Castro                                ║
+                    ║ - Raul Soares                                  ║
+                    ╚════════════════════════════════════════════════╝
+                    """);
             voltar = voltarMenu();
         }
     }
 
     private boolean voltarMenu() {
-        limparTela(1);
         boolean response = false;
         int exitOption = 0;
-        System.out.printf("Pressione %d para voltar ao menu principal.%n", exitOption);
-        int input = scanner.nextInt();
+        int input = verifyIntEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption));
         if (input == exitOption) {
             response = true;
-        } else {
-            System.out.println("Opção inválida, tente novamente.");
         }
         return response;
     }
@@ -108,5 +112,22 @@ public class Menu {
         for (int i = 0; i < quantidadeDeLinhas; i++) {
             System.out.println();
         }
+    }
+
+    private int verifyIntEntry(String inputText) {
+        int option = -1;
+        boolean entradaValida = false;
+
+        while (!entradaValida) {
+            try {
+                System.out.print(inputText);
+                option = scanner.nextInt();
+                entradaValida = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Valor inválido! Por favor, insira um número válido.");
+                scanner.next();
+            }
+        }
+        return option;
     }
 }
