@@ -76,14 +76,6 @@ release:
       with:
         name: rpg-adventure-game
 
-    - name: Verify TOKEN_GITHUB
-      run: |
-        if [ -z "$TOKEN_GITHUB" ]; then
-          echo "TOKEN_GITHUB is not set"
-        else
-          echo "TOKEN_GITHUB is set"
-        fi
-
     - name: Create Release
       id: create_release
       run: |
