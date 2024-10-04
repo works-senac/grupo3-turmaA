@@ -31,9 +31,14 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
    ```
 
 2. Compile o código com o seguinte comando:
-    ```bash
-    javac -d bin src\jogo\grupo3\turmaA\*.java
-    ```
+    1. (Windows)
+         ```shell
+         javac -d bin src\jogo\grupo3\turmaA\*.java
+         ```
+    2. (Linux/Mac)
+         ```shell
+         javac -d bin src/jogo/grupo3/turmaA/*.java
+         ```
 
 3. Execute o jogo com:
     ```bash
@@ -42,7 +47,24 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
 
 ## Executando com .jar
 
-1. Baixe o zip que contem o .jar do jogo:
+1. Baixe o zip que contem o .jar do jogo que se encontra na última release com o nome de "a-lenda-de-silverhollow.jar":
+2. Entre na sua pasta de downloads usando o terminal:
+    1. (Windows)
+       ```shell
+       cd %USERPROFILE%\Downloads 
+       ```    
+    2. (Linux/Mac)
+       ```shell
+       cd ~/Downloads 
+       ```
+3. Após isso basta executar o programa usando o próprio terminal:
+   ````shell
+   java -jar a-lenda-de-silverhollow.jar
+   ````
+
+## Última Release
+
+Veja a [última release](https://github.com/works-senac/grupo3-turmaA/releases/latest) do projeto.
 
 ### Clonando o repositório
 
