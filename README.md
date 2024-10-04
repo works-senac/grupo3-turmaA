@@ -23,6 +23,14 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
 
 ---
 
+## Clonando o repositório
+
+Você pode clonar este repositório em seu ambiente local com o seguinte comando:
+
+```bash
+git clone https://github.com/works-senac/grupo3-turmaA.git
+```
+
 ## Execução Local
 
 1. Entre na pasta do projeto:
@@ -68,10 +76,3 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
 
 Veja a [última release](https://github.com/works-senac/grupo3-turmaA/releases/latest) do projeto.
 
-### Clonando o repositório
-
-Você pode clonar este repositório em seu ambiente local com o seguinte comando:
-
-```bash
-git clone https://github.com/works-senac/grupo3-turmaA.git
-```
