@@ -36,4 +36,4 @@ jobs:
         with:
           name: a-lenda-de-silverhollow
           path: a-lenda-de-silverhollow.jar
-          archive: false
+          compression-level: 0
