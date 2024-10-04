@@ -23,7 +23,7 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
 
 ---
 
-## Execução
+## Execução Local
 
 1. Entre na pasta do projeto:
    ```bash
@@ -39,6 +39,10 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
     ```bash
     java -cp bin jogo.grupo3.turmaA.Main
     ```
+
+## Executando com .jar
+
+1. Baixe o zip que contem o .jar do jogo:
 
 ### Clonando o repositório
 
