@@ -37,7 +37,19 @@ jobs:
           name: a-lenda-de-silverhollow
           path: a-lenda-de-silverhollow.jar
 
-      - name: Verify GITHUB_TOKEN
+      - name: Check if TOKEN_GITHUB is set
+        run: |
+          if [ -z "$TOKEN_GITHUB" ]; then
+            echo "TOKEN_GITHUB is not set"
+          else
+            echo "TOKEN_GITHUB is set"
+          fi
+
+      - name: Print repository info
+        run:
+          echo "Repository: ${{ github.repository }}"
+
+      - name: Verify TOKEN_GITHUB
         run: |
           # Teste para verificar se o token está funcionando
           response=$(curl -s -H "Authorization: token $TOKEN_GITHUB" \
