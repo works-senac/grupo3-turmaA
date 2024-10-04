@@ -32,7 +32,7 @@ jobs:
           jar cfe a-lenda-de-silverhollow.jar jogo.grupo3.turmaA.Main -C bin .
 
       - name: Upload JAR as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: a-lenda-de-silverhollow
           path: a-lenda-de-silverhollow.jar
