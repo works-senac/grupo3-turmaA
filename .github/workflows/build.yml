@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - master
-    tags:
-      - 'v*'
+  #    tags:
+  #      - 'v*'
   pull_request:
     branches:
       - master
-    tags:
-      - 'v*'
+#    tags:
+#      - 'v*'
 
 env:
   TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
