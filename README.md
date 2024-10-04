@@ -47,7 +47,9 @@ Antes de iniciar o jogo, certifique-se de que você tenha os seguintes itens ins
 
 ## Executando com .jar
 
-1. Baixe o zip que contem o .jar do jogo que se encontra na última release com o nome de "a-lenda-de-silverhollow.jar":
+1. Baixe o zip que contem o .jar do jogo que se encontra na
+   última [release](https://github.com/works-senac/grupo3-turmaA/releases/latest) com o nome de "
+   a-lenda-de-silverhollow.jar":
 2. Entre na sua pasta de downloads usando o terminal:
     1. (Windows)
        ```shell
