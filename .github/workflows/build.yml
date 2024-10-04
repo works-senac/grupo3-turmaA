@@ -48,9 +48,9 @@ jobs:
       - name: Check if TOKEN_GITHUB is set
         run: |
           if [ -z "$TOKEN_GITHUB" ]; then
-          echo "TOKEN_GITHUB is not set"
+            echo "TOKEN_GITHUB is not set"
           else
-          echo "TOKEN_GITHUB is set"
+            echo "TOKEN_GITHUB is set"
           fi
 
       - name: Print repository info
@@ -72,25 +72,27 @@ jobs:
     steps:
       - name: Download JAR Artifact
         uses: actions/download-artifact@v3
-        run: ls -la
         with:
-          name: rpg-adventure-game
+          name: a-lenda-de-silverhollow
+
+      - name: List downloaded files
+        run: ls -la
 
       - name: Create Release
         id: create_release
         run: |
           tag_name="v1.0-${{ github.sha }}"
-            response=$(curl -s -H "Authorization: token $TOKEN_GITHUB" \
+          response=$(curl -s -H "Authorization: token $TOKEN_GITHUB" \
             -H "Accept: application/vnd.github.v3+json" \
             -d "{\"tag_name\":\"$tag_name\", \"name\":\"Release $tag_name\", \"body\":\"Novo build disponível!\"}" \
             https://api.github.com/repos/${{ github.repository }}/releases)
           
-            echo "Release criada: $response"
-            echo "::set-output name=id::$(echo $response | jq -r .id)" 
+          echo "Release criada: $response"
+          echo "::set-output name=id::$(echo $response | jq -r .id)" 
 
       - name: Upload JAR to Release
         run: |
           curl -X POST -H "Authorization: token $TOKEN_GITHUB" \
             -H "Content-Type: application/java-archive" \
-            --data-binary @rpg-adventure-game.jar \
-            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}/assets?name=rpg-adventure-game.jar"
+            --data-binary @a-lenda-de-silverhollow.jar \
+            "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}/assets?name=a-lenda-de-silverhollow.jar"
