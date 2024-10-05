@@ -1,6 +1,7 @@
 package jogo.grupo3.turmaA;
 
-import java.util.InputMismatchException;
+import jogo.grupo3.turmaA.utils.Utils;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -10,7 +11,7 @@ public class Menu {
         boolean continuar = true;
 
         while (continuar) {
-            limparTela(100);
+            Utils.limparTela(100);
             // https://patorjk.com/software/taag/#p=display&f=Small%20Slant&t=A%20Lenda%20de%20Silverhollow
             System.out.println("""
                     ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -36,7 +37,7 @@ public class Menu {
                     ║ 0. Sair          ║
                     ╚══════════════════╝
                     """);
-            int option = verifyIntEntry("Sua escolha: ");
+            int option = (int) Utils.verifyEntry("Sua escolha: ", scanner, "int");
             switch (option) {
                 case 1 -> iniciarJogo();
                 case 2 -> carregarJogo();
@@ -53,14 +54,14 @@ public class Menu {
     }
 
     public void iniciarJogo() {
-        limparTela(100);
+        Utils.limparTela(100);
         System.out.println("Jogo iniciado!");
     }
 
     public void carregarJogo() {
         boolean voltar = false;
         while (!voltar) {
-            limparTela(100);
+            Utils.limparTela(100);
             System.out.println("Carregando jogo...");
             voltar = voltarMenu();
         }
@@ -69,7 +70,7 @@ public class Menu {
     public void configurations() {
         boolean voltar = false;
         while (!voltar) {
-            limparTela(100);
+            Utils.limparTela(100);
             System.out.println("Abrindo configurações...");
             voltar = voltarMenu();
         }
@@ -78,7 +79,7 @@ public class Menu {
     public void credits() {
         boolean voltar = false;
         while (!voltar) {
-            limparTela(100);
+            Utils.limparTela(100);
             System.out.print("""
                     ╔════════════════════════════════════════════════╗
                     ║              Senac SP - Santo Amaro            ║
@@ -101,33 +102,10 @@ public class Menu {
     private boolean voltarMenu() {
         boolean response = false;
         int exitOption = 0;
-        int input = verifyIntEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption));
+        int input = (int) Utils.verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption), scanner, "int");
         if (input == exitOption) {
             response = true;
         }
         return response;
-    }
-
-    private void limparTela(int quantidadeDeLinhas) {
-        for (int i = 0; i < quantidadeDeLinhas; i++) {
-            System.out.println();
-        }
-    }
-
-    private int verifyIntEntry(String inputText) {
-        int option = -1;
-        boolean entradaValida = false;
-
-        while (!entradaValida) {
-            try {
-                System.out.print(inputText);
-                option = scanner.nextInt();
-                entradaValida = true;
-            } catch (InputMismatchException e) {
-                System.out.println("Valor inválido! Por favor, insira um número válido.");
-                scanner.next();
-            }
-        }
-        return option;
     }
 }
