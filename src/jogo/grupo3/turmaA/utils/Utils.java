@@ -4,13 +4,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utils {
-    public void limparTela(int quantidadeDeLinhas) {
+    public static void limparTela(int quantidadeDeLinhas) {
         for (int i = 0; i < quantidadeDeLinhas; i++) {
             System.out.println();
         }
     }
 
-    public Object verifyEntry(String inputText, Scanner scanner, String tipoEntrada) {
+    public static Object verifyEntry(String inputText, Scanner scanner, String tipoEntrada) {
         Object option = null;
         boolean entradaValida = false;
 

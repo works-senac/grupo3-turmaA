@@ -6,13 +6,12 @@ import java.util.Scanner;
 
 public class Menu {
     private final Scanner scanner = new Scanner(System.in);
-    private final Utils utils = new Utils();
 
     public void showMenu() {
         boolean continuar = true;
 
         while (continuar) {
-            utils.limparTela(100);
+            Utils.limparTela(100);
             // https://patorjk.com/software/taag/#p=display&f=Small%20Slant&t=A%20Lenda%20de%20Silverhollow
             System.out.println("""
                     ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -38,7 +37,7 @@ public class Menu {
                     ║ 0. Sair          ║
                     ╚══════════════════╝
                     """);
-            int option = (int) utils.verifyEntry("Sua escolha: ", scanner, "int");
+            int option = (int) Utils.verifyEntry("Sua escolha: ", scanner, "int");
             switch (option) {
                 case 1 -> iniciarJogo();
                 case 2 -> carregarJogo();
@@ -55,14 +54,14 @@ public class Menu {
     }
 
     public void iniciarJogo() {
-        utils.limparTela(100);
+        Utils.limparTela(100);
         System.out.println("Jogo iniciado!");
     }
 
     public void carregarJogo() {
         boolean voltar = false;
         while (!voltar) {
-            utils.limparTela(100);
+            Utils.limparTela(100);
             System.out.println("Carregando jogo...");
             voltar = voltarMenu();
         }
@@ -71,7 +70,7 @@ public class Menu {
     public void configurations() {
         boolean voltar = false;
         while (!voltar) {
-            utils.limparTela(100);
+            Utils.limparTela(100);
             System.out.println("Abrindo configurações...");
             voltar = voltarMenu();
         }
@@ -80,7 +79,7 @@ public class Menu {
     public void credits() {
         boolean voltar = false;
         while (!voltar) {
-            utils.limparTela(100);
+            Utils.limparTela(100);
             System.out.print("""
                     ╔════════════════════════════════════════════════╗
                     ║              Senac SP - Santo Amaro            ║
@@ -103,7 +102,7 @@ public class Menu {
     private boolean voltarMenu() {
         boolean response = false;
         int exitOption = 0;
-        int input = (int) utils.verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption), scanner, "int");
+        int input = (int) Utils.verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption), scanner, "int");
         if (input == exitOption) {
             response = true;
         }
