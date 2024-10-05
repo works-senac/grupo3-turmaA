@@ -39,14 +39,10 @@ git clone https://github.com/works-senac/grupo3-turmaA.git
    ```
 
 2. Compile o código com o seguinte comando:
-    1. (Windows)
-         ```shell
-         javac -d bin src\jogo\grupo3\turmaA\*.java
-         ```
-    2. (Linux/Mac)
-         ```shell
-         javac -d bin src/jogo/grupo3/turmaA/*.java
-         ```
+    1. Disponível apenas em sistema Unix por conta de uma dificuldade do Windows:
+          ```shell
+          javac -d bin src/**/*.java
+          ```
 
 3. Execute o jogo com:
     ```bash
