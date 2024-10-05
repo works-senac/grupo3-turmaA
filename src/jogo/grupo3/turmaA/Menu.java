@@ -63,7 +63,7 @@ public class Menu {
         while (!voltar) {
             Utils.limparTela(100);
             System.out.println("Carregando jogo...");
-            voltar = voltarMenu();
+            voltar = Utils.returnScreen(scanner, 0);
         }
     }
 
@@ -72,7 +72,7 @@ public class Menu {
         while (!voltar) {
             Utils.limparTela(100);
             System.out.println("Abrindo configurações...");
-            voltar = voltarMenu();
+            voltar = Utils.returnScreen(scanner, 0);
         }
     }
 
@@ -95,17 +95,7 @@ public class Menu {
                     ║ - Raul Soares                                  ║
                     ╚════════════════════════════════════════════════╝
                     """);
-            voltar = voltarMenu();
+            voltar = Utils.returnScreen(scanner, 0);
         }
-    }
-
-    private boolean voltarMenu() {
-        boolean response = false;
-        int exitOption = 0;
-        int input = (int) Utils.verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption), scanner, "int");
-        if (input == exitOption) {
-            response = true;
-        }
-        return response;
     }
 }
