@@ -46,7 +46,7 @@ git clone https://github.com/works-senac/grupo3-turmaA.git
 
 3. Execute o jogo com:
     ```bash
-    java -cp bin jogo.grupo3.turmaA.Main
+    javac -d bin $(find src -name "*.java")
     ```
 
 ## Executando com .jar
