@@ -43,6 +43,7 @@ public class Menu {
                 case 2 -> carregarJogo();
                 case 3 -> configurations();
                 case 4 -> credits();
+                case 5 -> contarHistoria();
                 case 0 -> {
                     System.out.println("Saindo do jogo...");
                     continuar = false;
@@ -94,6 +95,29 @@ public class Menu {
                     ║ - Kaynan Castro                                ║
                     ║ - Raul Soares                                  ║
                     ╚════════════════════════════════════════════════╝
+                    """);
+            voltar = Utils.returnScreen(scanner, 0);
+        }
+    }
+
+    public void contarHistoria() {
+        boolean voltar = false;
+        while (!voltar) {
+            Utils.limparTela(100);
+            System.out.print("""
+                    ╔══════════════════════════════════════════════════════════════════╗
+                    ║                     A Lenda de Silverhollow                      ║
+                    ╠══════════════════════════════════════════════════════════════════╣
+                    ║   Um jovem chamado Merlin vivia na vila de Silverhollow, um      ║
+                    ║   lugar de paz e tranquilidade até que um vírus nulo surgiu,     ║
+                    ║   trazendo caos e desespero. Merlin, um curandeiro em formação,  ║
+                    ║   agora parte em uma jornada perigosa em busca da cura que       ║
+                    ║   salvará sua vila.                                              ║
+                    ╠══════════════════════════════════════════════════════════════════╣
+                    ║                     Você será Merlin, o herói.                   ║
+                    ║      Prepare-se para explorar, enfrentar desafios e salvar       ║
+                    ║                 Silverhollow neste RPG épico!                    ║
+                    ╚══════════════════════════════════════════════════════════════════╝
                     """);
             voltar = Utils.returnScreen(scanner, 0);
         }
