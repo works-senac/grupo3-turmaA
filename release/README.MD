@@ -1,7 +1,6 @@
 ## Novo Release
 
-### Utils
+### Utils - Console Colors
 
-- Foi adicionado uma função com apenas os utilitários:
-    - Limpar a tela
-    - Verificar tipo de entradas
+- Foi adicionado uma função para os utilitários:
+    - Colorir o texto no terminal
