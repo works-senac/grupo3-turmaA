@@ -3,7 +3,7 @@ package jogo.grupo3.turmaA;
 
 /***
  * @author raulr
- * @author kaynanc
+ * @author Namorado do Gilvan
  * @author gustavor
  * @author gilvanm
  *       ___     __               __          __      _____ __             __        ____
