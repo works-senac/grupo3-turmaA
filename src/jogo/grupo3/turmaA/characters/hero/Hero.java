@@ -1,7 +1,5 @@
 package jogo.grupo3.turmaA.characters.hero;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class Hero {
     // __ __ __ _
     // ___ ___ _____ / /____ __ _____ _/_/ ___ / /____ _____(_)__
