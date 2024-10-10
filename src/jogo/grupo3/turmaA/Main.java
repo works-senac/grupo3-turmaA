@@ -1,6 +1,5 @@
 package jogo.grupo3.turmaA;
 
-
 /***
  * @author raulr
  * @author kaynanc
@@ -14,8 +13,10 @@ package jogo.grupo3.turmaA;
  */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main() {
         Menu menu = new Menu();
         menu.showMenu();
+        // JavaChallengesManager challenges = new JavaChallengesManager();
+        // challenges.executeRandomChallenge("simple");
     }
 }
