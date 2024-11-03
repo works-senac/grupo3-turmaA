@@ -1,12 +1,7 @@
-name: Build Java Project
+name: Build Java Project with Maven
 
 on:
   push:
-    tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - master
     tags:
       - 'v*'
 
@@ -28,20 +23,19 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Compile project
-        run: |
-          mkdir -p bin
-          javac -d bin $(find src -name "*.java")
+      - name: Set up Maven
+        run: sudo apt-get install -y maven
 
-      - name: Create JAR
+      - name: Build with Maven
         run: |
-          jar cfe a-lenda-de-silverhollow.jar jogo.grupo3.turmaA.Main -C bin .
+          mvn clean package
 
       - name: Upload JAR as artifact
         uses: actions/upload-artifact@v4
         with:
           name: a-lenda-de-silverhollow
-          path: a-lenda-de-silverhollow.jar
+          # path: target/a-lenda-de-silverhollow-1.0-SNAPSHOT.jar
+          path: target/a-lenda-de-silverhollow*.jar
 
   verify-github-token:
     runs-on: ubuntu-latest
@@ -110,6 +104,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: a-lenda-de-silverhollow.jar
+          asset_path: target/a-lenda-de-silverhollow-1.0-SNAPSHOT.jar
+          # asset_path: a-lenda-de-silverhollow.jar
           asset_name: a-lenda-de-silverhollow.jar
           asset_content_type: application/java-archive
