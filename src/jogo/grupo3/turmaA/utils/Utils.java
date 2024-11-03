@@ -42,4 +42,12 @@ public class Utils {
         }
         return response;
     }
+
+    public static void sleepTiming(int sleepTime) {
+        try {
+            Thread.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            System.err.println("A thread foi interrompida: " + e.getMessage());
+        }
+    }
 }
