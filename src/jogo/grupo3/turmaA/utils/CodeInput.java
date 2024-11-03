@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class CodeInput {
-    public static void codeTeste(String className, String code) {
+    public static boolean codeTeste(String className, String code) {
         File sourceFile = createCodeFile(className, code);
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
@@ -33,9 +33,9 @@ public class CodeInput {
                 }
 
                 int exitCode = process.waitFor();
-                if (exitCode != 0) {
-                    System.out.printf("Processo terminou com código de erro: %d%n", exitCode);
-                }
+                deleteFile(sourceFile);
+                deleteFile(new File("%s.class".formatted(className)));
+                return exitCode == 0;
 
             } catch (Exception e) {
                 System.out.printf("Erro durante a execução: %s%n", e);
@@ -47,6 +47,7 @@ public class CodeInput {
 
         deleteFile(sourceFile);
         deleteFile(new File("%s.class".formatted(className)));
+        return false;
     }
 
     private static void deleteFile(File file) {
@@ -60,7 +61,6 @@ public class CodeInput {
     }
 
     private static @NotNull File createCodeFile(String className, String code) {
-
         String classContent = """
                 public class %s {
                     public static void main(String[] args) {
@@ -73,7 +73,7 @@ public class CodeInput {
         try (FileWriter writer = new FileWriter(sourceFile)) {
             writer.write(classContent);
         } catch (Exception e) {
-            System.out.printf("Error ao criar o arquivo: %s%n", e);
+            System.out.printf("Erro ao criar o arquivo: %s%n", e);
         }
         return sourceFile;
     }
