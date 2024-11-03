@@ -122,11 +122,6 @@ public class Hero {
                                 break;
                             case 2:
 
-                                System.out.println(name + "Corre e se esconde no arbusto!");
-                                System.out.println("O monstrp o encontra, e tenta te atacar.");
-                                System.out.println(name + "Corre, e ao tentar olhar para trás, cai de um penhasco!");
-                                System.out.println("Fim do jogo.");
-
                                 break;
                             case 3:
                                 hero.close();
