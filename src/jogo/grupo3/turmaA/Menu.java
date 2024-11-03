@@ -30,20 +30,18 @@ public class Menu {
                     ║  Menu Principal  ║
                     ╠══════════════════╣
                     ║ 1. Iniciar Jogo  ║
-                    ║ 2. Carregar Jogo ║
-                    ║ 3. Configurações ║
-                    ║ 4. Créditos      ║
-                    ║ 5. História      ║
+                    ║ 2. Instruções    ║
+                    ║ 3. Créditos      ║
+                    ║ 4. História      ║
                     ║ 0. Sair          ║
                     ╚══════════════════╝
                     """);
             int option = (int) Utils.verifyEntry("Sua escolha: ", scanner, "int");
             switch (option) {
                 case 1 -> iniciarJogo();
-                case 2 -> carregarJogo();
-                case 3 -> configurations();
-                case 4 -> credits();
-                case 5 -> contarHistoria();
+                case 2 -> gameInstructions();
+                case 3 -> credits();
+                case 4 -> contarHistoria();
                 case 0 -> {
                     System.out.println("Saindo do jogo...");
                     continuar = false;
@@ -59,20 +57,11 @@ public class Menu {
         System.out.println("Jogo iniciado!");
     }
 
-    public void carregarJogo() {
+    public void gameInstructions() {
         boolean voltar = false;
         while (!voltar) {
             Utils.limparTela(100);
             System.out.println("Carregando jogo...");
-            voltar = Utils.returnScreen(scanner, 0);
-        }
-    }
-
-    public void configurations() {
-        boolean voltar = false;
-        while (!voltar) {
-            Utils.limparTela(100);
-            System.out.println("Abrindo configurações...");
             voltar = Utils.returnScreen(scanner, 0);
         }
     }
