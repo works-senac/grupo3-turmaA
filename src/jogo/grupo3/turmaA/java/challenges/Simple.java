@@ -12,7 +12,7 @@ public class Simple extends JavaChallenges {
     @Override
     protected void addChallenges() {
         challenges.add(this::challenge1);
-        hints.add("Use StringBuilder para inverter a string ou percorra de trás para frente.");
+        hints.add("Percorra de trás para frente um laço.");
 
         challenges.add(this::challenge2);
         hints.add("Percorra o array e compare cada valor com o maior número encontrado até o momento.");
@@ -22,12 +22,17 @@ public class Simple extends JavaChallenges {
     }
 
     private boolean challenge1() {
-        System.out.println("Crie uma função que inverta uma string.");
+        System.out.println("Complete a função que inverta uma string, utilizando laços de repetição.");
         System.out.println("Digite o código para inverter uma string:");
 
         String userCode = getUserCode();
+        /* resposta do que esta faltando
+            for (int i = original.length() - 1; i >= 0; i--) {
+                reversed += original.charAt(i);
+            }
+         */
         String code = """
-                String original = "exemplo";
+                String original = "A-Lenda-De-SilverHollow";
                 String reversed = ""; // Complete aqui para inverter 'original'
                 %s
                 System.out.println("Invertido: " + reversed);
@@ -41,11 +46,22 @@ public class Simple extends JavaChallenges {
         System.out.println("Digite o código para encontrar o maior número:");
 
         String userCode = getUserCode();
+        /*resposta faltando:
+        for (int num : numbers) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        */
         String code = """
-                int[] numbers = {1, 5, 3, 9, 2};
+                 int[] numbers = {1, 5, 3, 9, 2};
                 int max = Integer.MIN_VALUE; // Complete aqui para encontrar o maior número
                 %s
-                System.out.println("Maior número: " + max);
+                if (max == 9) {
+                    System.out.println("Desafio concluído com sucesso! Maior número: " + max);
+                } else {
+                    System.out.println("O código não encontrou o maior número corretamente. Valor obtido: " + max);
+                }
                 """.formatted(userCode);
         return CodeInput.codeTeste("Challenge2", code);
     }
@@ -55,6 +71,11 @@ public class Simple extends JavaChallenges {
         System.out.println("Digite o código para calcular o fatorial:");
 
         String userCode = getUserCode();
+        /* resposta
+        for (int i = 1; i <= n; i++) {
+            fatorial *= i;
+        }
+        */
         String code = """
                 int n = 5;
                 int fatorial = 1; // Complete aqui para calcular o fatorial de 'n'
