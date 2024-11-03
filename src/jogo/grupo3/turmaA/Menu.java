@@ -4,9 +4,6 @@ import jogo.grupo3.turmaA.utils.Utils;
 
 import java.util.Scanner;
 
-import static jogo.grupo3.turmaA.utils.Utils.sleepTiming;
-import static jogo.grupo3.turmaA.utils.Utils.verifyEntry;
-
 public class Menu {
     private final Scanner scanner = new Scanner(System.in);
 
@@ -39,7 +36,7 @@ public class Menu {
                     ║ 0. Sair          ║
                     ╚══════════════════╝
                     """);
-            int option = (int) verifyEntry("Sua escolha: ", scanner, "int");
+            int option = (int) Utils.verifyEntry("Sua escolha: ", scanner, "int");
             switch (option) {
                 case 1 -> iniciarJogo();
                 case 2 -> gameInstructions();
@@ -62,11 +59,11 @@ public class Menu {
             System.out.println("Escolha uma dificuldade para os desafios: ");
             System.out.println("1. Normal");
             System.out.println("2. Difícil");
-            int input = (int) verifyEntry("", scanner, "int");
+            int input = (int) Utils.verifyEntry("", scanner, "int");
             Utils.limparTela(100);
             History history = new History(input);
             System.out.println("Carregando jogo...");
-            sleepTiming(5000);
+            Utils.sleepTiming(5000);
             Utils.limparTela(100);
             history.showGame();
             // Deixar assim por enquanto porem colocar o role de texto par poder re-jogar
