@@ -1,10 +1,9 @@
 package jogo.grupo3.turmaA;
 
 /***
- * @author raulr
- * @author kaynanc
- * @author gustavor
- * @author gilvanm
+ * @author raul soares
+ * @author kaynan castro
+ * @author gustavo oliveira
  *       ___     __               __          __      _____ __             __        ____
  *      / _ |   / /  ___ ___  ___/ /__ _  ___/ /__   / __(_) /  _____ ____/ /  ___  / / /__ _    __
  *     / __ |  / /__/ -_) _ \/ _  / _ `/ / _  / -_) _\ \/ / / |/ / -_) __/ _ \/ _ \/ / / _ \ |/|/ /
@@ -13,10 +12,8 @@ package jogo.grupo3.turmaA;
  */
 
 public class Main {
-    public static void main() {
+    public static void main(String[] args) {
         Menu menu = new Menu();
         menu.showMenu();
-        // JavaChallengesManager challenges = new JavaChallengesManager();
-        // challenges.executeRandomChallenge("simple");
     }
 }
