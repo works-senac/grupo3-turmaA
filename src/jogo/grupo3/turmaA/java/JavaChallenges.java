@@ -3,6 +3,7 @@ package jogo.grupo3.turmaA.java;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.function.Supplier;
 
 public abstract class JavaChallenges {
@@ -51,5 +52,18 @@ public abstract class JavaChallenges {
 
         challenges.remove(index);
         hints.remove(index);
+    }
+
+    public String getUserCode() {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder userCode = new StringBuilder();
+        String line;
+
+        System.out.println("Digite seu código e finalize com duas linhas em branco:");
+        while (!(line = scanner.nextLine()).isEmpty()) {
+            userCode.append(line).append("\n");
+        }
+
+        return userCode.toString();
     }
 }
