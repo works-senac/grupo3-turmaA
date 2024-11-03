@@ -23,6 +23,7 @@ public class Utils {
                     case "double" -> scanner.nextDouble();
                     case "float" -> scanner.nextFloat();
                     case "long" -> scanner.nextLong();
+                    case "next" -> scanner.next();
                     default -> throw new IllegalArgumentException("Tipo de entrada inválido!");
                 };
                 entradaValida = true;
