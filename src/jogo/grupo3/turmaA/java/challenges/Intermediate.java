@@ -32,11 +32,22 @@ public class Intermediate extends JavaChallenges {
         System.out.println("Contador de vogais em uma string.");
         System.out.println("Digite o código para contar as vogais:");
         String userCode = getUserCode();
+        /* resposta
+        for (char c : texto.toLowerCase().toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                contadorVogais++;
+            }
+        }
+        */
         String code = """
                 String texto = "exemplo";
                 int contadorVogais = 0; // Complete o código para contar vogais
                 %s
-                System.out.println("Número de vogais: " + contadorVogais);
+                if (contadorVogais == 3) {
+                    System.out.println("Desafio concluído com sucesso! Número de vogais: " + contadorVogais);
+                } else {
+                    System.out.println("O código não contou as vogais corretamente. Valor obtido: " + contadorVogais);
+                }
                 """.formatted(userCode);
         return CodeInput.codeTeste("Challenge4", code);
     }

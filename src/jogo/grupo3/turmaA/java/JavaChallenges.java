@@ -18,10 +18,10 @@ public abstract class JavaChallenges {
 
     protected abstract void addChallenges();
 
-    public void executeRandomChallenge() {
+    public boolean executeRandomChallenge() {
         if (challenges.isEmpty()) {
             System.out.println("Não há mais desafios disponíveis.");
-            return;
+            return false;
         }
 
         int index = random.nextInt(challenges.size());
@@ -32,7 +32,7 @@ public abstract class JavaChallenges {
         boolean challengeSolved = false;
 
         do {
-            System.out.println("Desafio:");
+            System.out.println("Desafio necessário a resolver para poder utilizar a magia:");
             boolean challengeResponse = challenge.get();
             if (challengeResponse) {
                 challengeSolved = true;
@@ -52,6 +52,7 @@ public abstract class JavaChallenges {
 
         challenges.remove(index);
         hints.remove(index);
+        return challengeSolved;
     }
 
     public String getUserCode() {
