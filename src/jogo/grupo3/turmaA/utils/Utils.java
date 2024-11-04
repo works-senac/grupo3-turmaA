@@ -36,10 +36,19 @@ public class Utils {
 
     public static boolean returnScreen(Scanner scanner, int exitOption) {
         boolean response = false;
-        int input = (int) verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption), scanner, "int");
+        int input = (int) verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption),
+                scanner, "int");
         if (input == exitOption) {
             response = true;
         }
         return response;
+    }
+
+    public static void sleepTiming(int sleepTime) {
+        try {
+            Thread.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            System.err.println("A thread foi interrompida: " + e.getMessage());
+        }
     }
 }
