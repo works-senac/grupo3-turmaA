@@ -37,7 +37,8 @@ public class Utils {
 
     public static boolean returnScreen(Scanner scanner, int exitOption) {
         boolean response = false;
-        int input = (int) verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption), scanner, "int");
+        int input = (int) verifyEntry(String.format("Pressione %d para voltar ao menu principal.%n", exitOption),
+                scanner, "int");
         if (input == exitOption) {
             response = true;
         }
