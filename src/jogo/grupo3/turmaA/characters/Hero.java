@@ -18,10 +18,8 @@ public class Hero {
 
     // Antes disso aqui precisa chamar a base da história
     public void startHeroHistory() {
-        System.out.println(heroName
-                + ", ve sua vila infectada, porém como ainda era um jovem aprendiz de curandeiro ele acaba não conseguindo fazer nada.");
-        System.out.println(
-                heroName + " estava no seu treinamneto de curandeiro, no hospital da vila, quando derrepente...");
+        System.out.println(heroName + ", ve sua vila infectada, porém como ainda era um jovem aprendiz de curandeiro ele acaba não conseguindo fazer nada.");
+        System.out.println(heroName + " estava no seu treinamneto de curandeiro, no hospital da vila, quando derrepente...");
         Utils.sleepTiming(1000);
         System.out.println("Seus amigos te chamam apavorados!");
         Utils.sleepTiming(1000);
@@ -60,28 +58,23 @@ public class Hero {
         Utils.sleepTiming(1000);
         System.out.println(heroName + " estava injuriado com o ocorrido.");
         Utils.sleepTiming(1000);
-        System.out.println(
-                heroName + ": - Mestre! Preciso fazer algo para resolver essa situação, a vila toda está morrendo!");
+        System.out.println(heroName + ": - Mestre! Preciso fazer algo para resolver essa situação, a vila toda está morrendo!");
         Utils.sleepTiming(1000);
         System.out.println("Mestre: - " + heroName + ", existe um jeito de conseguir salvar sua mãe e essa vila! ");
         Utils.sleepTiming(1000);
         System.out.println(heroName + ": - Como mestre? Diga-me para que possamos resolver isso de uma vez por todas!");
         Utils.sleepTiming(1000);
-        System.out.println("Mestre: - " + heroName
-                + ", Existe uma lenda de uma flor curandeira que pode curar qualquer tipo de doença! ");
+        System.out.println("Mestre: - " + heroName + ", Existe uma lenda de uma flor curandeira que pode curar qualquer tipo de doença! ");
         Utils.sleepTiming(1000);
-        System.out.println(heroName
-                + ": - Então tomei minha decisão! Irei atrás da flor mágica, mestre, peço que cuide de minha mãe e da vila até eu encontra-la!");
+        System.out.println(heroName + ": - Então tomei minha decisão! Irei atrás da flor mágica, mestre, peço que cuide de minha mãe e da vila até eu encontra-la!");
         Utils.sleepTiming(1000);
         System.out.println("Mestre: - " + "Mas calma garoto, você precisará disso para os desafios no caminho!");
         Utils.sleepTiming(1000);
         System.out.println("Mestre entrega o livro de mágias para " + heroName);
         Utils.sleepTiming(1000);
-        System.out.println(
-                "Mestre: - Pronto agora você terá como encontrar a flor mágica , boa sorte em sua jornada, estaremos te esperando.");
+        System.out.println("Mestre: - Pronto agora você terá como encontrar a flor mágica , boa sorte em sua jornada, estaremos te esperando.");
         Utils.sleepTiming(1000);
-        System.out.println(
-                "Oh não! " + heroName + " encontra o primeiro monstro! Pelo visto é um tipo de monstro de fogo! ");
+        System.out.println("Oh não! " + heroName + " encontra o primeiro monstro! Pelo visto é um tipo de monstro de fogo! ");
         Utils.sleepTiming(1000);
 
         boolean continuar = false;
@@ -205,8 +198,7 @@ public class Hero {
                 case 2 -> {
                     System.out.println(heroName + " esta tentando dar a volta na montanha!");
                     Utils.sleepTiming(1000);
-                    System.out.println(heroName
-                            + " ao estar rodeando a montanha, ele escorrega em uma das pedras e cai da montanha!");
+                    System.out.println(heroName + " ao estar rodeando a montanha, ele escorrega em uma das pedras e cai da montanha!");
                     Utils.sleepTiming(1000);
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
                     continuar = retryAgain();
@@ -219,15 +211,18 @@ public class Hero {
         System.out.println(heroName + ", atravessa a ponte!");
         System.out.println(heroName + ": - UoU! Quase que eu caio.");
         System.out.println("Uma madeira quebrou, quase rompendo a corda!");
-        while (true) {
+
+
+        boolean continuar = false;
+
+        while (!continuar) {
             System.out.println("Escolha uma ação:");
             System.out.println("1. Concertar a madeira");
             System.out.println("2. Seguir sem arrumar a corda");
-            System.out.print("Digite o número da sua escolha: ");
-            int decision5 = scanner.nextInt();
+            int d = (int) Utils.verifyEntry("Digite o número da sua escolha: ", scanner, "int");
 
-            switch (decision5) {
-                case 1:
+            switch (d) {
+                case 1 -> {
                     System.out.println(heroName + ", arruma a madeira e segue seu caminho.");
                     System.out.println(heroName + ", Para pra descansar do outro lado do penhasco.");
                     System.out.println("Armou a sua fogueira e parou para descansar.");
@@ -235,29 +230,16 @@ public class Hero {
                     System.out.println("Uma mão encosta em seus ombros");
                     System.out.println("Um velho ancião, senta ao seu lado");
                     System.out.println("E lhe pergunta o que ele está fazendo por ali");
-                    System.out.println(heroName
-                            + ": - Estou a procura de uma flor lendaria capaz de curar o meu vilareijo e minha familia!");
+                    System.out.println(heroName + ": - Estou a procura de uma flor lendaria capaz de curar o meu vilareijo e minha familia!");
                     System.out.println("Ancião: - Meu rapaz, você sabe que isso pode ser só uma lenda.");
                     System.out.println(heroName + ": - Eu sei meu senhor, mas preciso ir atrás.");
-                    System.out.println(
-                            "Ancião: - Jovem, existem muitos perigos com essa lenda, se eu fosse você, eu deixaria de ir atrás.");
-
-                    break;
-                case 2:
+                    System.out.println("Ancião: - Jovem, existem muitos perigos com essa lenda, se eu fosse você, eu deixaria de ir atrás.");
+                }
+                case 2 -> {
                     System.out.println(heroName + ", segue e cai da ponte.");
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-
-                    // Pergunta se o jogador deseja tentar novamente
-                    boolean continuar = retryAgain();
-
-                    // Reinicia o jogo se o jogador optar por continuar
-                    if (continuar) {
-                        startHeroHistory(); // reinicia a história
-                    } else {
-                        System.out.println("Obrigado por jogar!"); // encerra o jogo
-                    }
-                    break;
-
+                    continuar = retryAgain();
+                }
             }
         }
     }
