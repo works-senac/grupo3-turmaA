@@ -19,7 +19,7 @@ public class Hero {
     // Antes disso aqui precisa chamar a base da história
     public void startHeroHistory() {
         System.out.println(heroName + ", ve sua vila infectada, porém como ainda era um jovem aprendiz de curandeiro ele acaba não conseguindo fazer nada.");
-        System.out.println(heroName + " estava no seu treinamneto de curandeiro, no hospital da vila, quando derrepente...");
+        System.out.println(heroName + " estava no seu treinamento de curandeiro, no hospital da vila, quando de repente...");
         Utils.sleepTiming(1000);
         System.out.println("Seus amigos te chamam apavorados!");
         Utils.sleepTiming(1000);
@@ -109,7 +109,7 @@ public class Hero {
         Utils.sleepTiming(2000);
         System.out.println("O monstro cai e você finaliza.");
         Utils.sleepTiming(1000);
-        System.out.println(heroName + ": - Ufaa! Ainda bem que consegui pegar certo, se não eu ia de ralo.");
+        System.out.println(heroName + ": - Ufa! Ainda bem que consegui pegar certo, se não eu ia de ralo.");
         Utils.sleepTiming(1000);
         System.out.println(heroName + " continua sua jornada em busca da flor!");
         Utils.sleepTiming(1000);
@@ -212,7 +212,6 @@ public class Hero {
         System.out.println(heroName + ": - UoU! Quase que eu caio.");
         System.out.println("Uma madeira quebrou, quase rompendo a corda!");
 
-
         boolean continuar = false;
 
         while (!continuar) {
@@ -226,11 +225,11 @@ public class Hero {
                     System.out.println(heroName + ", arruma a madeira e segue seu caminho.");
                     System.out.println(heroName + ", Para pra descansar do outro lado do penhasco.");
                     System.out.println("Armou a sua fogueira e parou para descansar.");
-                    System.out.println("Quando derrepente!");
+                    System.out.println("Quando de repente!");
                     System.out.println("Uma mão encosta em seus ombros");
                     System.out.println("Um velho ancião, senta ao seu lado");
                     System.out.println("E lhe pergunta o que ele está fazendo por ali");
-                    System.out.println(heroName + ": - Estou a procura de uma flor lendaria capaz de curar o meu vilareijo e minha familia!");
+                    System.out.println(heroName + ": - Estou a procura de uma flor lendária capaz de curar o meu vilarejo e minha família!");
                     System.out.println("Ancião: - Meu rapaz, você sabe que isso pode ser só uma lenda.");
                     System.out.println(heroName + ": - Eu sei meu senhor, mas preciso ir atrás.");
                     System.out.println("Ancião: - Jovem, existem muitos perigos com essa lenda, se eu fosse você, eu deixaria de ir atrás.");
