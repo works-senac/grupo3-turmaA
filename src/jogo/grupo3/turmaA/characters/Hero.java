@@ -58,8 +58,7 @@ public class Hero {
         Utils.sleepTiming(1000);
         System.out.println(heroName + " estava injuriado com o ocorrido.");
         Utils.sleepTiming(1000);
-        System.out.println(
-                heroName + ": - Mestre! Preciso fazer algo para resolver essa situação, a vila toda está morrendo!");
+        System.out.println(heroName + ": - Mestre! Preciso fazer algo para resolver essa situação, a vila toda está morrendo!");
         Utils.sleepTiming(1000);
         System.out.println("Mestre: - " + heroName + ", existe um jeito de conseguir salvar sua mãe e essa vila! ");
         Utils.sleepTiming(1000);
@@ -75,13 +74,13 @@ public class Hero {
         Utils.sleepTiming(1000);
         System.out.println("Mestre: - Pronto agora você terá como encontrar a flor mágica , boa sorte em sua jornada, estaremos te esperando.");
         Utils.sleepTiming(1000);
-        System.out.println(
-                "Oh não! " + heroName + " encontra o primeiro monstro! Pelo visto é um tipo de monstro de fogo! ");
+        System.out.println("Oh não! " + heroName + " encontra o primeiro monstro! Pelo visto é um tipo de monstro de fogo! ");
         Utils.sleepTiming(1000);
 
         boolean continuar = false;
 
         while (!continuar) {
+
             System.out.println("Escolha uma ação:");
             System.out.println("1. Abrir o livro de mágias e usar suas mágias");
             System.out.println("2. Correr e se esconder");
@@ -180,8 +179,7 @@ public class Hero {
         System.out.println(" O monstro cai!");
         System.out.println(heroName + ": - Receba seu doce!");
         System.out.println(heroName + ", após vencer o monstro de prata segue seu caminho.");
-        System.out.println(
-                "Continuando sua jornada, " + heroName + " encontra o penhasco, porém ele encontra uma ponte!");
+        System.out.println("Continuando sua jornada, " + heroName + " encontra o penhasco, porém ele encontra uma ponte!");
         System.out.println(heroName + " : - Droga! essa ponte me parece meio bamba, será que devo arriscar?");
         System.out.println("Escolha uma ação:");
         System.out.println("1. Atravessar a ponte");
@@ -200,8 +198,7 @@ public class Hero {
                 case 2 -> {
                     System.out.println(heroName + " esta tentando dar a volta na montanha!");
                     Utils.sleepTiming(1000);
-                    System.out.println(heroName
-                            + " ao estar rodeando a montanha, ele escorrega em uma das pedras e cai da montanha!");
+                    System.out.println(heroName + " ao estar rodeando a montanha, ele escorrega em uma das pedras e cai da montanha!");
                     Utils.sleepTiming(1000);
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
                     continuar = retryAgain();
@@ -211,6 +208,7 @@ public class Hero {
     }
 
     public void atravessarPonte() {
+
         System.out.println(heroName + ", atravessa a ponte!");
         System.out.println(heroName + ": - UoU! Quase que eu caio.");
         System.out.println("Uma madeira quebrou, quase rompendo a corda!");
@@ -230,8 +228,7 @@ public class Hero {
                     System.out.println("Uma mão encosta em seus ombros");
                     System.out.println("Um velho ancião, senta ao seu lado");
                     System.out.println("E lhe pergunta o que ele está fazendo por ali");
-                    System.out.println(heroName
-                            + ": - Estou a procura de uma flor lendaria capaz de curar o meu vilareijo e minha familia!");
+                    System.out.println(heroName+ ": - Estou a procura de uma flor lendaria capaz de curar o meu vilareijo e minha familia!");
                     System.out.println("Ancião: - Meu rapaz, você sabe que isso pode ser só uma lenda.");
                     System.out.println(heroName + ": - Eu sei meu senhor, mas preciso ir atrás.");
                     System.out.println(
