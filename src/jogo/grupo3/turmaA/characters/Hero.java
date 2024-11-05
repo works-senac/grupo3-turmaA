@@ -65,18 +65,15 @@ public class Hero {
         Utils.sleepTiming(1000);
         System.out.println(heroName + ": - Como mestre? Diga-me para que possamos resolver isso de uma vez por todas!");
         Utils.sleepTiming(1000);
-        System.out.println("Mestre: - " + heroName
-                + ", Existe uma lenda de uma flor curandeira que pode curar qualquer tipo de doença! ");
+        System.out.println("Mestre: - " + heroName + ", Existe uma lenda de uma flor curandeira que pode curar qualquer tipo de doença! ");
         Utils.sleepTiming(1000);
-        System.out.println(heroName
-                + ": - Então tomei minha decisão! Irei atrás da flor mágica, mestre, peço que cuide de minha mãe e da vila até eu encontra-la!");
+        System.out.println(heroName + ": - Então tomei minha decisão! Irei atrás da flor mágica, mestre, peço que cuide de minha mãe e da vila até eu encontra-la!");
         Utils.sleepTiming(1000);
         System.out.println("Mestre: - " + "Mas calma garoto, você precisará disso para os desafios no caminho!");
         Utils.sleepTiming(1000);
         System.out.println("Mestre entrega o livro de mágias para " + heroName);
         Utils.sleepTiming(1000);
-        System.out.println(
-                "Mestre: - Pronto agora você terá como encontrar a flor mágica , boa sorte em sua jornada, estaremos te esperando.");
+        System.out.println("Mestre: - Pronto agora você terá como encontrar a flor mágica , boa sorte em sua jornada, estaremos te esperando.");
         Utils.sleepTiming(1000);
         System.out.println(
                 "Oh não! " + heroName + " encontra o primeiro monstro! Pelo visto é um tipo de monstro de fogo! ");
