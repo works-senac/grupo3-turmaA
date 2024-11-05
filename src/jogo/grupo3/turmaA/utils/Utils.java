@@ -1,13 +1,47 @@
 package jogo.grupo3.turmaA.utils;
 
+import jogo.grupo3.turmaA.java.JavaChallengesManager;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static jogo.grupo3.turmaA.utils.ConsoleColors.*;
 
 public class Utils {
     public static void limparTela(int quantidadeDeLinhas) {
         for (int i = 0; i < quantidadeDeLinhas; i++) {
             System.out.println();
         }
+    }
+
+    public static boolean executarDesafio(String challengeLevel, JavaChallengesManager magicBook, Scanner scanner) {
+        boolean continuar = false;
+        while (!continuar) {
+            continuar = magicBook.executeRandomChallenge(challengeLevel);
+
+            if (!continuar) {
+                System.out.println("O " + RED + "monstro" + RESET + " te ataca e consegue te ferir fatalmente.");
+                Utils.sleepTiming(1000);
+                System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
+                continuar = retryAgain(scanner);
+                if (!continuar) {
+                    System.exit(0);
+                }
+            }
+        }
+        return continuar;
+    }
+
+    public static boolean retryAgain(Scanner scanner) {
+        System.out.println("Deseja tentar novamente?");
+        System.out.println("""
+                ╔═════════╗
+                ║ 1. Sim  ║
+                ║ 0. Não  ║
+                ╚═════════╝
+                """);
+        int input = (int) Utils.verifyEntry("Qual será sua escolha: ", scanner, "int");
+        return input != 1;
     }
 
     public static Object verifyEntry(String inputText, Scanner scanner, String tipoEntrada) {
@@ -23,6 +57,7 @@ public class Utils {
                     case "double" -> scanner.nextDouble();
                     case "float" -> scanner.nextFloat();
                     case "long" -> scanner.nextLong();
+                    case "next" -> scanner.next();
                     default -> throw new IllegalArgumentException("Tipo de entrada inválido!");
                 };
                 entradaValida = true;
