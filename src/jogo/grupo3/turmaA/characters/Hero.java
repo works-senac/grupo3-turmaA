@@ -18,10 +18,8 @@ public class Hero {
 
     // Antes disso aqui precisa chamar a base da história
     public void startHeroHistory() {
-        System.out.println(heroName
-                + ", ve sua vila infectada, porém como ainda era um jovem aprendiz de curandeiro ele acaba não conseguindo fazer nada.");
-        System.out.println(
-                heroName + " estava no seu treinamneto de curandeiro, no hospital da vila, quando derrepente...");
+        System.out.println(heroName+ ", ve sua vila infectada, porém como ainda era um jovem aprendiz de curandeiro ele acaba não conseguindo fazer nada.");
+        System.out.println(heroName + " estava no seu treinamneto de curandeiro, no hospital da vila, quando derrepente...");
         Utils.sleepTiming(1000);
         System.out.println("Seus amigos te chamam apavorados!");
         Utils.sleepTiming(1000);
