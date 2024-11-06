@@ -41,7 +41,7 @@ public class Hero {
                     System.out.println("Sua mãe chega infectada pelo vírus, quase sem vida.");
                     System.out.println("Porém o seu mestre não estava no momento, e você não conseguiu fazer nada.");
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-                    continuar = retryAgain();
+                    continuar = Utils.retryAgain(scanner);
                 }
             }
         }
@@ -95,7 +95,7 @@ public class Hero {
                     System.out.println(heroName + " corre, e ao tentar olhar para trás, cai de um penhasco!");
                     Utils.sleepTiming(1000);
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-                    continuar = retryAgain();
+                    continuar = Utils.retryAgain(scanner);
                 }
             }
         }
@@ -103,7 +103,7 @@ public class Hero {
 
     public void secondDecision() {
         System.out.println("Abre o livro de mágias, qual mágia você usará?");
-        executarDesafio("simple");
+        Utils.executarDesafio("simple", magicBook, scanner);
         Utils.sleepTiming(1000);
         System.out.println(heroName + ", ataca! ");
         Utils.sleepTiming(2000);
@@ -140,13 +140,13 @@ public class Hero {
         System.out.println(heroName + ": - Esse é muito maior que o outro! Será que terei poder suficiente?");
         Utils.sleepTiming(1000);
         System.out.println(heroName + " abre o livro de mágias");
-        executarDesafio("simple");
+        Utils.executarDesafio("simple", magicBook, scanner);
         System.out.println(heroName + ", usa mágia correta!");
         Utils.sleepTiming(2000);
         System.out.println("O monstro desvia!");
         System.out.println(heroName + ": - Droga, como esse bicho desviou desse ataque?");
         Utils.sleepTiming(1000);
-        executarDesafio("simple");
+        Utils.executarDesafio("simple", magicBook, scanner);
         System.out.println(heroName + ", tenta novamente!");
         Utils.sleepTiming(1000);
         System.out.print(".");
@@ -167,7 +167,7 @@ public class Hero {
         System.out.println(heroName + ": - Como posso derrota-lo? Já sei precisarei de ataque do tipo fogo!");
         System.out.println(heroName + ": - Assim poderei derrete-lo para continuar!");
         System.out.println(heroName + ", abre o livro de mágia.");
-        executarDesafio("intermediate");
+        Utils.executarDesafio("intermediate", magicBook, scanner);
         System.out.println(heroName + " usa o ataque do tipo fogo!");
         System.out.print(".");
         Utils.sleepTiming(1000);
@@ -178,8 +178,7 @@ public class Hero {
         System.out.println(" O monstro cai!");
         System.out.println(heroName + ": - Receba seu doce!");
         System.out.println(heroName + ", após vencer o monstro de prata segue seu caminho.");
-        System.out.println(
-                "Continuando sua jornada, " + heroName + " encontra o penhasco, porém ele encontra uma ponte!");
+        System.out.println("Continuando sua jornada, " + heroName + " encontra o penhasco, porém ele encontra uma ponte!");
         System.out.println(heroName + " : - Droga! essa ponte me parece meio bamba, será que devo arriscar?");
         System.out.println("Escolha uma ação:");
         System.out.println("1. Atravessar a ponte");
@@ -201,7 +200,7 @@ public class Hero {
                     System.out.println(heroName + " ao estar rodeando a montanha, ele escorrega em uma das pedras e cai da montanha!");
                     Utils.sleepTiming(1000);
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-                    continuar = retryAgain();
+                    continuar = Utils.retryAgain(scanner);
                 }
             }
         }
@@ -237,34 +236,9 @@ public class Hero {
                 case 2 -> {
                     System.out.println(heroName + ", segue e cai da ponte.");
                     System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-                    continuar = retryAgain();
+                    continuar = Utils.retryAgain(scanner);
                 }
             }
         }
-    }
-
-    private void executarDesafio(String challengeLevel) {
-        boolean continuar = false;
-        while (!continuar) {
-            continuar = magicBook.executeRandomChallenge(challengeLevel);
-
-            if (!continuar) {
-                System.out.println("O " + RED + "monstro" + RESET + " te ataca e consegue te ferir fatalmente.");
-                Utils.sleepTiming(1000);
-                System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-                continuar = retryAgain();
-                if (!continuar) {
-                    System.exit(0);
-                }
-            }
-        }
-    }
-
-    public boolean retryAgain() {
-        System.out.println("Deseja tentar novamente?");
-        System.out.println("1. Sim");
-        System.out.println("0. Não");
-        int input = (int) Utils.verifyEntry("Qual será sua escolha: ", scanner, "int");
-        return input != 1;
     }
 }
