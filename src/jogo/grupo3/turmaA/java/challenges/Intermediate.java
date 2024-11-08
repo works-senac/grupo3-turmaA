@@ -32,22 +32,6 @@ public class Intermediate extends JavaChallenges {
 
     private boolean challenge1() {
         if (challengeLevel == 1) {
-            System.out.println("Contador de vogais em uma string.");
-            System.out.println("Digite o código para contar as vogais:");
-
-            String code = """
-                    String texto = "exemplo";
-                    int contadorVogais = 0; // Complete o código para contar vogais
-                    %s
-                    if (contadorVogais == 3) {
-                        System.out.println("Desafio concluído com sucesso! Número de vogais: " + contadorVogais);
-                    } else {
-                        System.out.println("O código não contou as vogais corretamente. Valor obtido: " + contadorVogais);
-                    }
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge5", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para contar as vogais na string 'exemplo':");
 
             List<String> options = new ArrayList<>();
@@ -72,25 +56,28 @@ public class Intermediate extends JavaChallenges {
             String correctAnswer = "for (char c : texto.toLowerCase().toCharArray()) { if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') { contadorVogais++; } }";
 
             return optionMap.get(userChoice).equals(correctAnswer);
-        }
+        } else if (challengeLevel == 2) {
+            System.out.println("Contador de vogais em uma string.");
+            System.out.println("Digite o código para contar as vogais:");
 
+            String code = """
+                    String texto = "exemplo";
+                    int contadorVogais = 0; // Complete o código para contar vogais
+                    %s
+                    if (contadorVogais == 3) {
+                        System.out.println("Desafio concluído com sucesso! Número de vogais: " + contadorVogais);
+                    } else {
+                        System.out.println("O código não contou as vogais corretamente. Valor obtido: " + contadorVogais);
+                    }
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge5", userCode);
+        }
         return false;
     }
 
     private boolean challenge2() {
         if (challengeLevel == 1) {
-            System.out.println("Verifique se uma string é um palíndromo.");
-            System.out.println("Digite o código para verificar o palíndromo:");
-
-            String code = """
-                    String palavra = "radar";
-                    boolean isPalindromo = true; // Complete o código para verificar se é palíndromo
-                    %s
-                    System.out.println("É palíndromo? " + isPalindromo);
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge5", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para verificar se a string 'radar' é um palíndromo:");
 
             List<String> options = new ArrayList<>();
@@ -114,24 +101,24 @@ public class Intermediate extends JavaChallenges {
             char userChoice = getUserChoice();
             String correctAnswer = "for (int i = 0; i < palavra.length() / 2; i++) { if (palavra.charAt(i) != palavra.charAt(palavra.length() - i - 1)) { isPalindromo = false; break; } }";
             return optionMap.get(userChoice).equals(correctAnswer);
+        } else if (challengeLevel == 2) {
+            System.out.println("Verifique se uma string é um palíndromo.");
+            System.out.println("Digite o código para verificar o palíndromo:");
+
+            String code = """
+                    String palavra = "radar";
+                    boolean isPalindromo = true; // Complete o código para verificar se é palíndromo
+                    %s
+                    System.out.println("É palíndromo? " + isPalindromo);
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge5", userCode);
         }
         return false;
     }
 
     private boolean challenge3() {
         if (challengeLevel == 1) {
-            System.out.println("Converter número decimal para binário.");
-            System.out.println("Digite o código para a conversão:");
-
-            String code = """
-                    int decimal = 10;
-                    String binario = ""; // Complete o código para a conversão
-                    %s
-                    System.out.println("Binário: " + binario);
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge6", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para converter o número 10 para binário:");
 
             List<String> options = new ArrayList<>();
@@ -156,23 +143,25 @@ public class Intermediate extends JavaChallenges {
             String correctAnswer = "while (decimal > 0) { binario = (decimal % 2) + binario; decimal = decimal / 2; }";
 
             return optionMap.get(userChoice).equals(correctAnswer);
+
+        } else if (challengeLevel == 2) {
+            System.out.println("Converter número decimal para binário.");
+            System.out.println("Digite o código para a conversão:");
+
+            String code = """
+                    int decimal = 10;
+                    String binario = ""; // Complete o código para a conversão
+                    %s
+                    System.out.println("Binário: " + binario);
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge6", userCode);
         }
         return false;
     }
 
     private boolean challenge4() {
         if (challengeLevel == 1) {
-            System.out.println("Contador de palavras em um parágrafo.");
-            System.out.println("Digite o código para contar as palavras:");
-
-            String code = """
-                    String paragrafo = "A lenda de SilverHollow";
-                    // Complete o código para contar as palavras e exibir as contagens
-                    %s
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge7", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para contar as palavras no parágrafo 'A lenda de SilverHollow':");
 
             List<String> options = new ArrayList<>();
@@ -197,24 +186,24 @@ public class Intermediate extends JavaChallenges {
             String correctAnswer = "contadorPalavras = paragrafo.split(\"\\s+\").length;";
 
             return optionMap.get(userChoice).equals(correctAnswer);
+
+        } else if (challengeLevel == 2) {
+            System.out.println("Contador de palavras em um parágrafo.");
+            System.out.println("Digite o código para contar as palavras:");
+
+            String code = """
+                    String paragrafo = "A lenda de SilverHollow";
+                    // Complete o código para contar as palavras e exibir as contagens
+                    %s
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge7", userCode);
         }
         return false;
     }
 
     private boolean challenge5() {
         if (challengeLevel == 1) {
-            System.out.println("Verificar se uma matriz é quadrada.");
-            System.out.println("Digite o código para verificar:");
-
-            String code = """
-                    int[][] matriz = {{1, 2}, {3, 4}};
-                    boolean isQuadrada = true; // Complete o código para verificar
-                    %s
-                    System.out.println("É quadrada? " + isQuadrada);
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge8", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para verificar se a matriz {{1, 2}, {3, 4}} é quadrada:");
 
             List<String> options = new ArrayList<>();
@@ -238,6 +227,18 @@ public class Intermediate extends JavaChallenges {
             char userChoice = getUserChoice();
             String correctAnswer = "isQuadrada = matriz.length == matriz[0].length;";
             return optionMap.get(userChoice).equals(correctAnswer);
+        } else if (challengeLevel == 2) {
+            System.out.println("Verificar se uma matriz é quadrada.");
+            System.out.println("Digite o código para verificar:");
+
+            String code = """
+                    int[][] matriz = {{1, 2}, {3, 4}};
+                    boolean isQuadrada = true; // Complete o código para verificar
+                    %s
+                    System.out.println("É quadrada? " + isQuadrada);
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge8", userCode);
         }
 
         return false;

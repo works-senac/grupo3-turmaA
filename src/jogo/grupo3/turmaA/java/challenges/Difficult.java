@@ -22,27 +22,6 @@ public class Difficult extends JavaChallenges {
 
     private boolean challenge1() {
         if (challengeLevel == 1) {
-            System.out.println("Implementar a busca binária em uma lista ordenada.");
-            System.out.println("Digite o código para realizar a busca binária:");
-
-            String code = """
-                    // A lista de números deve estar ordenada
-                    int[] lista = {1, 3, 5, 7, 9, 11, 13, 15, 17};
-                    int valorBusca = 7;
-                    int indice = -1;
-                    
-                    // Complete o código para implementar a busca binária
-                    %s
-                    
-                    if (indice != -1) {
-                        System.out.println("Valor encontrado no índice: " + indice);
-                    } else {
-                        System.out.println("Valor não encontrado.");
-                    }
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge6", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para a implementação da busca binária em uma lista ordenada:");
 
             List<String> options = new ArrayList<>();
@@ -65,28 +44,34 @@ public class Difficult extends JavaChallenges {
             String correctAnswer = "while (inicio <= fim) { int meio = (inicio + fim) / 2; if (lista[meio] == valorBusca) { indice = meio; break; } else if (lista[meio] < valorBusca) { inicio = meio + 1; } else { fim = meio - 1; } }";
 
             return optionMap.get(userChoice).equals(correctAnswer);
+        } else if (challengeLevel == 2) {
+
+            System.out.println("Implementar a busca binária em uma lista ordenada.");
+            System.out.println("Digite o código para realizar a busca binária:");
+
+            String code = """
+                    // A lista de números deve estar ordenada
+                    int[] lista = {1, 3, 5, 7, 9, 11, 13, 15, 17};
+                    int valorBusca = 7;
+                    int indice = -1;
+                    
+                    // Complete o código para implementar a busca binária
+                    %s
+                    
+                    if (indice != -1) {
+                        System.out.println("Valor encontrado no índice: " + indice);
+                    } else {
+                        System.out.println("Valor não encontrado.");
+                    }
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge6", userCode);
         }
         return false;
     }
 
     private boolean challenge2() {
         if (challengeLevel == 1) {
-            System.out.println("Resolva o problema das Torres de Hanói.");
-            System.out.println("Digite o código para resolver as Torres de Hanói:");
-
-            String code = """
-                    int discos = 5;
-                    char origem = 'A';
-                    char destino = 'C';
-                    char auxiliar = 'B';
-                    
-                    %s
-                    
-                    System.out.println("Torres de Hanói resolvido.");
-                    """;
-            String userCode = getString(code);
-            return CodeInput.codeTeste("Challenge10", userCode);
-        } else if (challengeLevel == 2) {
             System.out.println("Escolha a opção correta para implementar a solução para as Torres de Hanói:");
 
             List<String> options = new ArrayList<>();
@@ -109,6 +94,22 @@ public class Difficult extends JavaChallenges {
             String correctAnswer = "for (int i = 1; i <= discos; i++) { System.out.println(\"Mover disco \" + i + \" de \" + origem + \" para \" + destino); }";
 
             return optionMap.get(userChoice).equals(correctAnswer);
+        } else if (challengeLevel == 2) {
+            System.out.println("Resolva o problema das Torres de Hanói.");
+            System.out.println("Digite o código para resolver as Torres de Hanói:");
+
+            String code = """
+                    int discos = 5;
+                    char origem = 'A';
+                    char destino = 'C';
+                    char auxiliar = 'B';
+                    
+                    %s
+                    
+                    System.out.println("Torres de Hanói resolvido.");
+                    """;
+            String userCode = getString(code);
+            return CodeInput.codeTeste("Challenge10", userCode);
         }
         return false;
     }
