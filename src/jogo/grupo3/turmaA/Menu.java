@@ -111,7 +111,6 @@ public class Menu {
                     ║                   Grupo 3                      ║
                     ║                                                ║
                     ║                 Integrantes:                   ║
-                    ║ - Gilvan Matos                                 ║
                     ║ - Gustavo Rego                                 ║
                     ║ - Kaynan Castro                                ║
                     ║ - Raul Soares                                  ║
