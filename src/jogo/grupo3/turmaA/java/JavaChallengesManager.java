@@ -24,4 +24,19 @@ public class JavaChallengesManager {
             default -> throw new IllegalArgumentException("Nível de dificuldade inválido.");
         }
     }
+
+    public int quantityOfAvailableChallenges(@NotNull String difficulty) {
+        switch (difficulty.toLowerCase()) {
+            case "simple" -> {
+                return simple.quantityOfAvailableChallenges();
+            }
+            case "intermediate" -> {
+                return intermediate.quantityOfAvailableChallenges();
+            }
+            case "difficult" -> {
+                return difficult.quantityOfAvailableChallenges();
+            }
+            default -> throw new IllegalArgumentException("Nível de dificuldade inválido.");
+        }
+    }
 }

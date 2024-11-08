@@ -31,7 +31,7 @@ public class Villain {
         battleWithHero();
     }
 
-    private void battleWithHero() {
+    public void battleWithHero() {
         boolean battleContinues = true;
 
         while (battleContinues && (heroHealth > 0 && dragonHealth > 0)) {
@@ -53,7 +53,20 @@ public class Villain {
             switch (choice) {
                 case 1 -> {
                     System.out.println(villainName + " lança uma magia poderosa!");
-                    if (Utils.executarDesafio("difficult", challengeLevel, challengeManager, scanner)) {
+                    String desafio = "difficult";
+
+                    int quantidadeDesafiosRestantes = challengeManager.quantityOfAvailableChallenges(desafio);
+
+                    if (quantidadeDesafiosRestantes <= 0) {
+                        desafio = "intermediate";
+                        quantidadeDesafiosRestantes = challengeManager.quantityOfAvailableChallenges(desafio);
+                    }
+
+                    if (quantidadeDesafiosRestantes <= 0) {
+                        desafio = "simple";
+                    }
+
+                    if (Utils.executarDesafio(desafio, challengeLevel, challengeManager, scanner)) {
                         System.out.println("A magia acerta o herói, que grita de dor!");
                         heroHealth -= 30; // Dano causado ao herói
                     } else {

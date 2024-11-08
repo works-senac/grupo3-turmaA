@@ -21,6 +21,10 @@ public abstract class JavaChallenges {
 
     protected abstract void addChallenges();
 
+    public int quantityOfAvailableChallenges() {
+        return challenges.size();
+    }
+
     public boolean executeRandomChallenge(int challengeLevel) {
         if (challenges.isEmpty()) {
             System.out.println("Não há mais desafios disponíveis.");
