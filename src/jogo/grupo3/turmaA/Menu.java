@@ -74,7 +74,26 @@ public class Menu {
         boolean voltar = false;
         while (!voltar) {
             Utils.limparTela(100);
-            System.out.println("Carregando jogo...");
+            System.out.println("""
+                    ╔════════════════════════════════════════════════╗
+                    ║                Instruções de Jogo              ║
+                    ╠════════════════════════════════════════════════╣
+                    ║      Bem-vindo(a) ao mundo de Silverhollow!    ║
+                    ║                                                ║
+                    ║   Objetivo:                                    ║
+                    ║   . Salvar a vila de Silverhollow da ameaça.   ║
+                    ║                                                ║
+                    ║   Controles:                                   ║
+                    ║   . Use as teclas numéricas para selecionar    ║
+                    ║     opções e tomar decisões.                   ║
+                    ║                                                ║
+                    ║   Dicas Iniciais:                              ║
+                    ║   . Explore todas as opções e prepare-se para  ║
+                    ║     enfrentar desafios.                        ║
+                    ║   . Use seu livro de magias com sabedoria para ║
+                    ║     aumentar suas chances de sucesso.          ║
+                    ╚════════════════════════════════════════════════╝
+                    """);
             voltar = Utils.returnScreen(scanner, 0);
         }
     }
