@@ -32,3 +32,4 @@ bin/
 ### Idea ####
 .idea
 *.iml
+.old
