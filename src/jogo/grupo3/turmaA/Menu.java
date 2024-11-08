@@ -66,7 +66,6 @@ public class Menu {
             Utils.sleepTiming(5000);
             Utils.limparTela(100);
             history.showGame();
-            // Deixar assim por enquanto porem colocar o role de texto par poder re-jogar
             voltar = Utils.returnScreen(scanner, 0);
         }
     }

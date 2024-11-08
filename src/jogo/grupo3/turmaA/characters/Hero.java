@@ -11,8 +11,10 @@ public class Hero {
     private final String heroName;
     private final JavaChallengesManager magicBook = new JavaChallengesManager();
     private final Scanner scanner = new Scanner(System.in);
+    private final int challengeLevel;
 
-    public Hero(String heroName) {
+    public Hero(String heroName, int challengeLevel) {
+        this.challengeLevel = challengeLevel;
         this.heroName = heroName;
     }
 
@@ -103,7 +105,7 @@ public class Hero {
 
     public void secondDecision() {
         System.out.println("Abre o livro de mágias, qual mágia você usará?");
-        Utils.executarDesafio("simple", magicBook, scanner);
+        Utils.executarDesafio("simple", challengeLevel, magicBook, scanner);
         Utils.sleepTiming(1000);
         System.out.println(heroName + ", ataca! ");
         Utils.sleepTiming(2000);
@@ -140,13 +142,13 @@ public class Hero {
         System.out.println(heroName + ": - Esse é muito maior que o outro! Será que terei poder suficiente?");
         Utils.sleepTiming(1000);
         System.out.println(heroName + " abre o livro de mágias");
-        Utils.executarDesafio("simple", magicBook, scanner);
+        Utils.executarDesafio("simple", challengeLevel, magicBook, scanner);
         System.out.println(heroName + ", usa mágia correta!");
         Utils.sleepTiming(2000);
         System.out.println("O monstro desvia!");
         System.out.println(heroName + ": - Droga, como esse bicho desviou desse ataque?");
         Utils.sleepTiming(1000);
-        Utils.executarDesafio("simple", magicBook, scanner);
+        Utils.executarDesafio("simple", challengeLevel, magicBook, scanner);
         System.out.println(heroName + ", tenta novamente!");
         Utils.sleepTiming(1000);
         System.out.print(".");
@@ -167,7 +169,7 @@ public class Hero {
         System.out.println(heroName + ": - Como posso derrota-lo? Já sei precisarei de ataque do tipo fogo!");
         System.out.println(heroName + ": - Assim poderei derrete-lo para continuar!");
         System.out.println(heroName + ", abre o livro de mágia.");
-        Utils.executarDesafio("intermediate", magicBook, scanner);
+        Utils.executarDesafio("intermediate", challengeLevel, magicBook, scanner);
         System.out.println(heroName + " usa o ataque do tipo fogo!");
         System.out.print(".");
         Utils.sleepTiming(1000);

@@ -1,5 +1,7 @@
 package jogo.grupo3.turmaA.java;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,6 +12,7 @@ public abstract class JavaChallenges {
     protected final List<Supplier<Boolean>> challenges = new ArrayList<>();
     protected final List<String> hints = new ArrayList<>();
     protected final Random random = new Random();
+    protected int challengeLevel;
 
 
     public JavaChallenges() {
@@ -18,11 +21,13 @@ public abstract class JavaChallenges {
 
     protected abstract void addChallenges();
 
-    public boolean executeRandomChallenge() {
+    public boolean executeRandomChallenge(int challengeLevel) {
         if (challenges.isEmpty()) {
             System.out.println("Não há mais desafios disponíveis.");
             return false;
         }
+
+        this.challengeLevel = challengeLevel;
 
         int index = random.nextInt(challenges.size());
         Supplier<Boolean> challenge = challenges.get(index);
@@ -67,4 +72,19 @@ public abstract class JavaChallenges {
 
         return userCode.toString();
     }
+
+    public char getUserChoice() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Escolha uma opção (A, B, C ou D): ");
+        String input = scanner.nextLine().trim().toUpperCase();
+        return input.isEmpty() ? ' ' : input.charAt(0);
+    }
+
+    public @NotNull String getString(String code) {
+        String userCode = getUserCode();
+        System.out.println("Código que usara como base!");
+        System.out.println(code);
+        return code.formatted(userCode);
+    }
+
 }

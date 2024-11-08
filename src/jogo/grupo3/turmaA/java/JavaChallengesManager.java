@@ -10,16 +10,16 @@ public class JavaChallengesManager {
     private final Intermediate intermediate = new Intermediate();
     private final Difficult difficult = new Difficult();
 
-    public boolean executeRandomChallenge(@NotNull String difficulty) {
+    public boolean executeRandomChallenge(@NotNull String difficulty, int challengeLevel) {
         switch (difficulty.toLowerCase()) {
             case "simple" -> {
-                return simple.executeRandomChallenge();
+                return simple.executeRandomChallenge(challengeLevel);
             }
             case "intermediate" -> {
-                return intermediate.executeRandomChallenge();
+                return intermediate.executeRandomChallenge(challengeLevel);
             }
             case "difficult" -> {
-                return difficult.executeRandomChallenge();
+                return difficult.executeRandomChallenge(challengeLevel);
             }
             default -> throw new IllegalArgumentException("Nível de dificuldade inválido.");
         }

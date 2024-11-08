@@ -14,10 +14,10 @@ public class Utils {
         }
     }
 
-    public static boolean executarDesafio(String challengeLevel, JavaChallengesManager magicBook, Scanner scanner) {
+    public static boolean executarDesafio(String challengeType, int challengeLevel, JavaChallengesManager magicBook, Scanner scanner) {
         boolean continuar = false;
         while (!continuar) {
-            continuar = magicBook.executeRandomChallenge(challengeLevel);
+            continuar = magicBook.executeRandomChallenge(challengeType, challengeLevel);
 
             if (!continuar) {
                 System.out.println("O " + RED + "monstro" + RESET + " te ataca e consegue te ferir fatalmente.");
