@@ -35,6 +35,7 @@ public class Villain {
         boolean battleContinues = true;
 
         while (battleContinues && (heroHealth > 0 && dragonHealth > 0)) {
+            Utils.limparTela(100);
             System.out.println("=== Batalha Final em Curso ===");
             System.out.println("Saúde do Herói: " + heroHealth);
             System.out.println("Saúde do Dragão: " + dragonHealth);
@@ -129,6 +130,7 @@ public class Villain {
     }
 
     private void useItem() {
+        Utils.limparTela(100);
         System.out.println("Escolha um item para usar:");
         System.out.println("""
                 ╔═════════════════════════════════════════════════════════════╗

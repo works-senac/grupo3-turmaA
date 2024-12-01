@@ -43,7 +43,7 @@ public class History {
             Utils.sleepTiming(1000);
             System.out.println("Infelizmente sua jornada acaba por aqui!.");
             System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
-            System.out.println("Obrigado por jogar!.");
+            System.out.println(BLUE_BOLD_BRIGHT + "Obrigado por Jogar." + RESET);
             Utils.limparTela(100);
         }
 
@@ -65,6 +65,7 @@ public class History {
     }
 
     public void finalBom(String heroName) {
+        Utils.limparTela(100);
         System.out.printf("Após a derrota do dragão, %s encontrou um livro de magias entre os pertences do Ancião.%n", heroName);
         Utils.sleepTiming(1000);
         System.out.printf("%s desesperado, leu a fórmula que prometia curar a doença que assolava a vila.%n", heroName);
@@ -82,9 +83,11 @@ public class History {
         Utils.sleepTiming(1000);
         System.out.println(GREEN_BOLD_BRIGHT + "Fim do jogo." + RESET);
         System.out.println(BLUE_BOLD_BRIGHT + "Obrigado por Jogar." + RESET);
+        Utils.limparTela(100);
     }
 
     public void finalRuim(String heroName) {
+        Utils.limparTela(100);
         System.out.println("Com a vitória sobre o herói, eu, " + villainName + ", mantenho meu domínio sobre a vila.");
         Utils.sleepTiming(1000);
         System.out.println("Os moradores continuam a sofrer com a doença, enquanto eu me escondo na escuridão.");
@@ -94,5 +97,6 @@ public class History {
         Utils.sleepTiming(1000);
         System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
         System.out.println(BLUE_BOLD_BRIGHT + "Obrigado por Jogar." + RESET);
+        Utils.limparTela(100);
     }
 }
