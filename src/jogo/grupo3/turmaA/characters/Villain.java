@@ -46,8 +46,7 @@ public class Villain {
                     ║ 3. Lançar Ataque Especial      ║
                     ║ 4. Contra-atacar               ║
                     ║ 5. Usar Item                   ║
-                    ╚════════════════════════════════╝
-                    """);
+                    ╚════════════════════════════════╝""");
             int choice = (int) Utils.verifyEntry("Digite o número da sua escolha: ", scanner, "int");
 
             switch (choice) {

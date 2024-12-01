@@ -28,15 +28,25 @@ public class History {
         Utils.limparTela(100);
 
         Hero hero = new Hero(heroName, challengeLevel);
-        hero.startHeroHistory();
-        Villain villain = new Villain(villainName, challengeLevel);
-        villain.startFinalBattle();
 
-        if (villain.historyFinal) {
-            finalBom(heroName);
+        if (hero.startHeroHistory()) {
+            Villain villain = new Villain(villainName, challengeLevel);
+            villain.startFinalBattle();
+
+            if (villain.historyFinal) {
+                finalBom(heroName);
+            } else {
+                finalRuim(heroName);
+            }
         } else {
-            finalRuim(heroName);
+            Utils.limparTela(100);
+            Utils.sleepTiming(1000);
+            System.out.println("Infelizmente sua jornada acaba por aqui!.");
+            System.out.println(RED_BOLD_BRIGHT + "Fim do jogo." + RESET);
+            System.out.println("Obrigado por jogar!.");
+            Utils.limparTela(100);
         }
+
     }
 
     public void history1(String heroName) {

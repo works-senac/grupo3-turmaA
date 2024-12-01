@@ -34,14 +34,17 @@ public class Utils {
 
     public static boolean retryAgain(Scanner scanner) {
         System.out.println("Deseja tentar novamente?");
-        System.out.println("""
-                ╔═════════╗
-                ║ 1. Sim  ║
-                ║ 0. Não  ║
-                ╚═════════╝
-                """);
+        System.out.println("1. Sim | 0. Não");
         int input = (int) Utils.verifyEntry("Qual será sua escolha: ", scanner, "int");
-        return input != 1;
+        return input == 1;
+    }
+
+    public static boolean showHistoryTextAgain(Scanner scanner) {
+        System.out.println("Deseja mostrar o texto da história novamente?");
+        System.out.println("1. Sim | 0. Não");
+        int input = (int) Utils.verifyEntry("Qual será sua escolha: ", scanner, "int");
+        System.out.println(input);
+        return input == 1;
     }
 
     public static Object verifyEntry(String inputText, Scanner scanner, String tipoEntrada) {
